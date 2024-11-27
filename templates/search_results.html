@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Results
+{% endblock %}
+
+{% block main %}
+
+{% if not results %}
+<div> No results found</div>
+
+{% else %}
+
+    <table>
+        <tr>
+            <th style="text-align:left"> Film </th>
+            <th> Rating </th>
+            <th> Votes</th>
+            <th style="text-align:right"> Released </th>
+        </tr>
+            {% for item in results %}
+                <tr>
+                    <td>{{ item["title"] }}</td>
+                    <td style="text-align:center">{{ item["rating"] }}</td>
+                    <td style="text-align:center">{{ item["votes"] }}</td>
+                    <td style="text-align:center">{{ item["year"] }}</td>
+                </tr>
+            {% endfor %}
+    </table>
+{% endif %}
+
+<button onclick="location.href='{{ url_for('index') }}'"> New search </button>
+
+
+<!--
+    <div>
+    raw results {{ results }}
+    </div>
+-->
+
+{% endblock %}

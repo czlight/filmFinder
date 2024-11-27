@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index/Home
+{% endblock %}
+
+{% block main %}
+
+<div>
+Select the criteria below to filter films.
+</div>
+
+<form action="/" method="post">
+
+    <div class="mb-3">
+        <input class="form-control mx-auto w-auto" name="actor" placeholder="Actor" type="text">
+    </div>
+    <div class="mb-3">
+        <input class="form-control mx-auto w-auto" name="director" placeholder="Director" type="text">
+    </div>
+    <div class="mb-3">
+        <input class="form-control mx-auto w-auto" name="rating" placeholder="Rating" type="number">
+    </div>
+    <div>
+        <div> Film was released in or after:</div>
+        <select id="yearDropdown" name="yearDropdown" default="*">
+
+        </select>
+    </div>
+    <button class="btn btn-primary" type="submit">Go</button>
+</form>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
